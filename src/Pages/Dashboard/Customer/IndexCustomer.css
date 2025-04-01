@@ -1,0 +1,8 @@
+/* css style for show page */
+.show-table-first-customer > tbody > tr > th {
+  width: 22%;
+}
+
+.show-table-last-customer > thead > tr > th:nth-of-type(odd) {
+  width: 23%;
+}

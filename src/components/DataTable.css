@@ -1,0 +1,28 @@
+.search-transition {
+  transition: all 0.9s ease-in-out;
+}
+
+.bg-purple {
+  background-color: #302980 !important;
+  color: white !important;
+}
+
+.bg-purple:hover {
+  background-color: #483eb6 !important;
+  color: white !important;
+}
+
+.search-input {
+  transition: transform 0.5s ease-in-out;
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.search-expanded {
+  margin: 1em 0;
+}
+
+.search-bar {
+  height: 42px !important;
+  width: 42px !important;
+}

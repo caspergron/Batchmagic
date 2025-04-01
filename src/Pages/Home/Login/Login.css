@@ -1,0 +1,47 @@
+.text-custom {
+  line-height: 1.2;
+  margin-top: 100px;
+  font-weight: 600;
+  font-size: 48.55px;
+  word-spacing: 2%;
+}
+
+.text-purple {
+  color: #302980;
+}
+
+.text-orange {
+  color: #ff6e05 !important;
+}
+
+.card-custom {
+  width: 445px;
+  height: 473px;
+  margin-right: 145px;
+  border-radius: 20px;
+}
+
+.button-custom {
+  background-color: #ff6e05;
+  color: white;
+  width: 100%;
+  border-radius: 4px;
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button-custom:hover {
+  background-color: #302980;
+  border: 1px solid #302980;
+  box-shadow: 0px 4px 18px #3029805e;
+  transition: 0.9s ease-in-out;
+  transform: scale3d(1.02, 1.02, 1.02);
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+}

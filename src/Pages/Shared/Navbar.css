@@ -1,0 +1,10 @@
+.nav-color {
+  background-color: #302980 !important;
+  height: 121px;
+}
+
+.bordar-custom-dashboard {
+  border-left: 1px solid #ffffff !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}

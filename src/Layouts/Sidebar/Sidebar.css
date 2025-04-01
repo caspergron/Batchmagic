@@ -1,0 +1,132 @@
+/* Sidebar container */
+.sidebar {
+  width: 280px;
+  height: 100%;
+  background-color: #eaeaf2;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.sidebar-menu {
+  margin: 0;
+  padding: 0;
+  top: 50px;
+  position: relative;
+}
+
+/* Sidebar links */
+.sidebar-item {
+  font-size: 20px;
+  display: block;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+/* sidebar children gap 8px */
+.sidebar-item a {
+  padding: 8px 16px 8px 0px;
+  display: flex;
+  align-items: center;
+  color: #302980;
+  transition: 0.3s;
+  font-size: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Add margin between icon and text */
+.sidebar-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+
+/* Active/current link */
+.sidebar-item.active a,
+.sidebar-item.last-item a {
+  background-color: #302980;
+  color: #ffffff;
+}
+
+.sidebar-item.active {
+  background-color: #302980;
+  color: #ffffff;
+}
+
+/* Hover effect for non-selected items */
+.sidebar-item:not(.active):hover {
+  background-color: white;
+}
+
+.sidebar-item:not(.active):hover a {
+  color: #302980; /* Adjust text color on hover */
+}
+
+.px-60 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Show submenu when parent is active */
+.sidebar-item.active .submenu {
+  display: contents;
+}
+
+.submenu {
+  background-color: #302980;
+  display: none;
+  max-height: 0;
+  flex-direction: column;
+}
+
+.submenu.open {
+  display: flex;
+  max-height: 1000px;
+  transition: max-height 0.2s ease-out;
+}
+
+.submenu-item {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 20px;
+  background-color: rgba(217, 217, 217, 1) !important;
+  color: black;
+  width: 100%;
+  padding-left: 70px;
+  padding-bottom: 20px;
+}
+
+.submenu-item:not(.active):hover {
+  background-color: #302980;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.submenu-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.sub-active {
+  color: #ff6e05 !important;
+  text-decoration: none;
+}
+
+/* Responsive sidebar */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar-item {
+    font-size: 18px;
+  }
+}

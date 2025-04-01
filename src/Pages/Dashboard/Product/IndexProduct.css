@@ -1,0 +1,101 @@
+.recipe-content {
+  display: flex;
+  /* height: 100%; */
+  min-height: 100vh;
+}
+
+.recipe-sidebar {
+  flex: 1;
+}
+
+.product-component {
+  position: relative;
+  flex: 4;
+}
+
+/*  recipe component children margin right 20px*/
+.product-component > * {
+  margin-right: 20px;
+}
+
+/* css style for product show page */
+.show-table-first-product > tbody > tr > th {
+  width: 20% !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  color: #ff6e05 !important;
+}
+
+.show-table-last-product > tbody > tr > th {
+  width: 22% !important;
+  color: #fa7b1f !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+}
+
+.show-table-last-stock > thead > tr > th {
+  color: #ffad05 !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+.show-table-last-stock > tbody > tr > td {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
+
+/* css style for stock show page */
+.show-table-first-stocks > tbody > tr > th {
+  width: 24% !important;
+  color: #fa7b1f !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+}
+
+.show-table-last-stocks > tbody > tr > th {
+  width: 20% !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  color: #ff6e05 !important;
+}
+
+.btn-action-customized {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* css style for StockModal */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stock-modal {
+  background: white;
+  margin-top: 120px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  min-width: 850px;
+}
+
+.stock-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stock-archived {
+  background-color: #fa7b1f !important;
+  border: 5px solid #fa7b1f !important;
+  border-radius: 5px !important;
+}

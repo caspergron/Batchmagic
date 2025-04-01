@@ -1,0 +1,11 @@
+.home-backgroud {
+  background-color: #302980;
+  max-height: 100%;
+  width: 100%;
+  padding-left: 165px;
+}
+.info-card-backgroud {
+  background-image: url('../../../assets/Logo/startend.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}

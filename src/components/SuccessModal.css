@@ -1,0 +1,52 @@
+/* redeclaring modal value for expected view */
+.modal-backdrop {
+  z-index: 0 !important;
+}
+
+.modal-success .modal-dialog {
+  margin: auto;
+  height: 100% !important;
+}
+
+.modal-success-dialog .modal-content {
+  background-color: inherit !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+}
+
+.modal-success-content .modal-header {
+  border-width: 0 !important;
+  opacity: 0.5 !important;
+  margin-bottom: 24px !important;
+  padding-right: 6px !important;
+}
+
+.modal-success-content .modal-body {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* designing modal */
+.modal-success-body {
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.success-content-text h1 {
+  font-weight: 600;
+  font-size: 48px;
+  color: #fa7b1f;
+  margin-top: 26px;
+}
+
+.success-content-text p {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.success-sign-container {
+  background-color: #302980;
+  height: 130px;
+  border-radius: 16px;
+}

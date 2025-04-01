@@ -1,0 +1,60 @@
+.card-title {
+  font-weight: 600;
+  color: #ffad05 !important;
+}
+
+.heading-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #302980;
+}
+
+.dashboard-logo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.dashboard-button {
+  background-color: #302980;
+  color: #ffffff;
+  width: 466px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 45px;
+  text-transform: uppercase;
+}
+
+.dashboard-button:hover {
+  background-color: #ffad05;
+  border: 1px solid #ffad05;
+  box-shadow: 0px 4px 18px #ffac0592;
+  transition: 0.9s ease-in-out;
+  color: #ffffff;
+}
+
+.card-text-dashboard {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffad05;
+}
+
+.card-dashboard {
+  width: 540px;
+  height: 208px;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid white;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card-dashboard:hover {
+  box-shadow: 0px 10px 20px #ffac0592;
+  transition: 0.9s ease-in-out;
+  transform: scale(1.02);
+}
+
+.btn-small {
+  width: 22% !important;
+}

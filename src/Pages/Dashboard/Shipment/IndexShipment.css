@@ -1,0 +1,15 @@
+/* css style for show page */
+.show-table-first-shipment > tbody > tr > th:nth-of-type(odd) {
+  width: 18% !important;
+}
+
+.show-table-first-shipment > tbody > tr > th:nth-of-type(even) {
+  width: 25% !important;
+}
+
+.show-table-last-shipment > tbody > tr > th {
+  width: 22% !important;
+  color: #fa7b1f !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+}

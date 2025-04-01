@@ -1,0 +1,10 @@
+.batchmagic {
+  display: inline-block;
+  margin-top: 55px;
+}
+
+.batch {
+  background-image: url('../../../assets/Logo/star.svg');
+  background-repeat: no-repeat;
+  background-position: left 100% bottom 130%;
+}
