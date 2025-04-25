@@ -13,6 +13,8 @@ import Shipments from '../../Pages/Dashboard/Shipment/Index';
 import Products from '../../Pages/Dashboard/Product';
 import ResetPassword from '../../Pages/Home/ResetPassword/ResetPassword';
 import MixRecipes from '../../Pages/Dashboard/MixRecipes/index';
+import Users from '../../Pages/Dashboard/UserManagement';
+import PermissionGuard from '../../components/PermissionGuard';
 
 const router = createBrowserRouter([
   {
@@ -28,18 +30,67 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: (
       <PrivateRoute>
-        {' '}
         <DashboardLayout />
       </PrivateRoute>
     ),
     children: [
       { path: '/dashboard', element: <DashboardHome /> },
-      { path: '/dashboard/supplier/*', element: <Supplier /> },
-      { path: '/dashboard/product/*', element: <Products /> },
-      { path: '/dashboard/outgoing-batch/*', element: <OutgoingBatches /> },
-      { path: '/dashboard/customers/*', element: <Customers /> },
-      { path: '/dashboard/orders/*', element: <Shipments /> },
-      { path: '/dashboard/mix-recipes/*', element: <MixRecipes /> },
+      {
+        path: '/dashboard/supplier/*',
+        element: (
+          <PermissionGuard permission="suppliers">
+            <Supplier />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/product/*',
+        element: (
+          <PermissionGuard permission="products">
+            <Products />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/outgoing-batch/*',
+        element: (
+          <PermissionGuard permission="batches">
+            <OutgoingBatches />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/customers/*',
+        element: (
+          <PermissionGuard permission="customers">
+            <Customers />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/orders/*',
+        element: (
+          <PermissionGuard permission="orders">
+            <Shipments />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/mix-recipes/*',
+        element: (
+          <PermissionGuard permission="recipes">
+            <MixRecipes />
+          </PermissionGuard>
+        )
+      },
+      {
+        path: '/dashboard/user-management/*',
+        element: (
+          <PermissionGuard permission="user_management">
+            <Users />
+          </PermissionGuard>
+        )
+      },
       { path: '*', element: <NotFound /> },
     ],
   },

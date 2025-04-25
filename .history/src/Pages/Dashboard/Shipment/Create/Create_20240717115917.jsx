@@ -165,7 +165,7 @@ export default function Create() {
               </label>
               <input
                 type="date"
-                {...register('shipment_date', {
+                {...register('order_date', {
                   required: 'Shipment Date is Required',
                 })}
                 defaultValue={new Date().toISOString().substr(0, 10)}
@@ -173,10 +173,10 @@ export default function Create() {
                 id="shipment-date"
                 placeholder="Shipment Date"
               />
-              {errors.shipment_date && (
-                <p className="text-danger">{errors.shipment_date.message}</p>
+              {errors.order_date && (
+                <p className="text-danger">{errors.order_date.message}</p>
               )}
-              {err && <p className="text-danger">{err?.shipment_date}</p>}
+              {err && <p className="text-danger">{err?.order_date}</p>}
             </div>
 
             <div className="col-md-6 py-3 px-80">
@@ -189,7 +189,7 @@ export default function Create() {
               <DropDown
                 handleDropDown={handleDropDown}
                 dropDownValue={batchTemplates}
-                // optionLabel="outgoing_batch_code"
+              // optionLabel="outgoing_batch_code"
               />
             </div>
             {mix_recipe_id && (

@@ -64,7 +64,7 @@ const Edit = () => {
   useEffect(() => {
     if (shipment) {
       setValue('name', shipment.name);
-      setValue('shipment_date', shipment.shipment_date);
+      setValue('order_date', shipment.order_date);
       setValue('quantity', shipment.quantity);
       setValue('batch_template_id', shipment.batch_template_id);
       setValue('customer_id', shipment.customer_id);
@@ -155,9 +155,9 @@ const Edit = () => {
     data.customer_id = customer_id;
     return {
       name: data.name ? data.name : shipment.name,
-      shipment_date: data.shipment_date
-        ? data.shipment_date
-        : shipment.shipment_date,
+      order_date: data.order_date
+        ? data.order_date
+        : shipment.order_date,
       quantity: data.quantity ? data.quantity : shipment.quantity,
       outgoing_batch_id: data.outgoing_batch_id
         ? data.outgoing_batch_id
@@ -273,23 +273,23 @@ const Edit = () => {
                   <input
                     type="date"
                     {...(outgoingBatch
-                      ? register('shipment_date', {
-                          required: 'Shipment Date is Required',
-                        })
-                      : register('shipment_date', {
-                          required: false,
-                        }))}
+                      ? register('order_date', {
+                        required: 'Shipment Date is Required',
+                      })
+                      : register('order_date', {
+                        required: false,
+                      }))}
                     defaultValue={new Date().toISOString().substr(0, 10)}
                     className="form-control rounded-0"
                     id="shipment-date"
                     placeholder="Shipment Date"
                   />
-                  {errors.shipment_date && (
+                  {errors.order_date && (
                     <p className="text-danger">
-                      {errors.shipment_date.message}
+                      {errors.order_date.message}
                     </p>
                   )}
-                  {err && <p className="text-danger">{err?.shipment_date}</p>}
+                  {err && <p className="text-danger">{err?.order_date}</p>}
                 </div>
 
                 <div className="col-md-6 py-3 px-80">
@@ -306,7 +306,7 @@ const Edit = () => {
                       (template) => template.id === shipment?.batch_template_id,
                     )}
                     isDisabled
-                    // optionLabel="mix_recipe_name"
+                  // optionLabel="mix_recipe_name"
                   />
                 </div>
                 <div className="col-md-6 py-3 px-80">
@@ -364,10 +364,10 @@ const Edit = () => {
                             'Quantity must be positive',
                           ...(totalQuantity
                             ? {
-                                max: (value) =>
-                                  parseFloat(value) <= totalQuantity ||
-                                  `Quantity must be less than or equal to ${totalQuantity}`,
-                              }
+                              max: (value) =>
+                                parseFloat(value) <= totalQuantity ||
+                                `Quantity must be less than or equal to ${totalQuantity}`,
+                            }
                             : {}),
                           integer: (value) =>
                             Number.isInteger(parseFloat(value)) ||

@@ -115,7 +115,7 @@ export default function Show() {
                           <td>{ship?.name}</td>
                           <td>{ship?.outgoing_batch?.outgoing_batch_code}</td>
                           <td>{ship?.quantity}</td>
-                          <td>{ship?.shipment_date}</td>
+                          <td>{ship?.order_date}</td>
                         </tr>
                       );
                     })}

@@ -4,12 +4,15 @@ import { sidebarMenu } from './sidebar-components';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import useAuth from '../../hooks/useAuth';
+
 
 const Sidebar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-
   const [openSubMenu, setOpenSubMenu] = useState('');
+  const { hasPermission } = useAuth();
+
 
   const isActive = (menuItem) => {
     // Check if any submenu item is active
@@ -40,15 +43,22 @@ const Sidebar = () => {
     setOpenSubMenu(openSubMenu === menuItem.link ? '' : menuItem.link);
   };
 
+  // Filter menu items based on permissions
+  const filteredMenu = sidebarMenu.filter(item => {
+    if (item.permission) {
+      return hasPermission(item.permission);
+    }
+    return true;
+  });
+
   return (
     <div className="sidebar">
       <div className="sidebar-menu">
-        {sidebarMenu.map((menuItem) => (
+        {filteredMenu.map((menuItem) => (
           <div key={menuItem.link}>
             <div
-              className={`sidebar-item px-60 py-20 ${
-                isActive(menuItem) ? 'active' : ''
-              }`}
+              className={`sidebar-item px-60 py-20 ${isActive(menuItem) ? 'active' : ''
+                }`}
               onClick={() => toggleSubMenu(menuItem)}
             >
               <Link to={menuItem.link}>
@@ -70,15 +80,13 @@ const Sidebar = () => {
             {/* Check if submenu exists */}
             {menuItem.submenu && (
               <div
-                className={`submenu ${
-                  openSubMenu === menuItem.link ? 'open' : ''
-                }`}
+                className={`submenu ${openSubMenu === menuItem.link ? 'open' : ''
+                  }`}
               >
                 {menuItem.submenu.map((subItem) => (
                   <div
-                    className={`submenu-item ${
-                      isActiveSubmenu(subItem) ? 'sub-active' : ''
-                    }`}
+                    className={`submenu-item ${isActiveSubmenu(subItem) ? 'sub-active' : ''
+                      }`}
                     key={subItem.link}
                   >
                     <Link to={subItem.link}>
@@ -89,14 +97,12 @@ const Sidebar = () => {
                             : subItem.icon
                         }
                         alt=""
-                        className={`sidebar-icon ${
-                          isActiveSubmenu(subItem) ? 'sub-active' : ''
-                        }`}
+                        className={`sidebar-icon ${isActiveSubmenu(subItem) ? 'sub-active' : ''
+                          }`}
                       />
                       <span
-                        className={`${
-                          isActiveSubmenu(subItem) ? 'sub-active' : ''
-                        }`}
+                        className={`${isActiveSubmenu(subItem) ? 'sub-active' : ''
+                          }`}
                       >
                         {subItem.title}
                       </span>

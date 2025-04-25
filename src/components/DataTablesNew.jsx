@@ -65,6 +65,9 @@ const DataTables = ({
       const filteredData = rows.filter((row) => {
         const propertiesToSearch = [
           'name',
+          'first_name',
+          'last_name',
+          'email',
           'outgoing_batch_code',
           'ingoing_batch_number',
         ];
@@ -113,13 +116,19 @@ const DataTables = ({
                       placeholder={searchPlaceholder}
                     />
                   </div>
-                  <div id="toogle-add-btn" className="">
-                    <Link to={navigation}>
-                      <button type="button" className="btn list-add-btn">
-                        Add {header}
-                      </button>
-                    </Link>
-                  </div>
+                  {
+                    navigation &&
+                    <>
+                      <div id="toogle-add-btn" className="">
+                        <Link to={navigation}>
+                          <button type="button" className="btn list-add-btn">
+                            Add {header}
+                          </button>
+                        </Link>
+                      </div>
+                    </>
+                  }
+
                 </div>
               )
             }

@@ -20,6 +20,7 @@ export const sidebarMenu = [
     title: 'Incoming Products',
     icon: incoming_products,
     iconSelected: incoming_products_selected,
+    permission: 'products',
     link: '/dashboard/product',
     submenu: [
       {
@@ -43,29 +44,64 @@ export const sidebarMenu = [
     icon: batches,
     iconSelected: batches_selected,
     link: '/dashboard/outgoing-batch',
+    permission: 'batches'
   },
   {
     title: 'Suppliers',
     icon: suppliers,
     iconSelected: suppliers_selected,
     link: '/dashboard/supplier',
+    permission: 'suppliers'
   },
   {
     title: 'Customers',
     icon: customers,
     iconSelected: customers_selected,
     link: '/dashboard/customers',
+    permission: 'customers'
   },
   {
     title: 'Outgoing Orders',
     icon: outgoing_shipments,
     iconSelected: outgoing_shipments_selected,
     link: '/dashboard/orders',
+    permission: 'orders'
   },
   {
     title: 'Mix Recipes',
     icon: mix_recipes,
     iconSelected: mix_recipes_selected,
     link: '/dashboard/mix-recipes',
+    permission: 'recipes'
+  },
+  {
+    title: 'User Management',
+    icon: incoming_products,
+    iconSelected: incoming_products_selected,
+    link: '/dashboard/user-management',
+    permission: 'user_management',
+    submenu: [
+      {
+        title: 'Users',
+        link: '/dashboard/user-management',
+        icon: shopping_bag,
+        iconSelected: shopping_bag_selected,
+        parentLink: '/dashboard/user-management',
+      },
+      {
+        title: 'Roles',
+        link: '/dashboard/user-management/roles',
+        icon: stock,
+        iconSelected: stock_selected,
+        parentLink: '/dashboard/user-management',
+      },
+      {
+        title: 'Permissions',
+        link: '/dashboard/user-management/permissions',
+        icon: stock,
+        iconSelected: stock_selected,
+        parentLink: '/dashboard/user-management',
+      },
+    ],
   },
 ];

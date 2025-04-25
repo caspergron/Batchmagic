@@ -75,7 +75,7 @@ export default function Show() {
                     <th scope="col">Quantity</th>
                     <td>{shipment?.quantity}</td>
                     <th scope="col">Shipment Date</th>
-                    <td>{shipment?.shipment_date}</td>
+                    <td>{shipment?.order_date}</td>
                   </tr>
                   <tr>
                     <th scope="col">Mix Recipe</th>

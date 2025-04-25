@@ -121,124 +121,127 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-between my-5 me-5 ">
-      <h1 className="text-white text-custom">
-        An <span className="text-warning">easy-to-use</span> <br /> batch
-        tracking <br /> system for your <br /> webshop orders
-      </h1>
-      <div className="card card-custom p-5">
-        <div className="d-flex justify-content-between">
-          <div>
-            <h5 className="card-title text-warning fw-bolder">
-              Exisiting user?
-            </h5>
-            <h5 className="text-purple fw-bolder">Please log in here</h5>
-          </div>
-          <div>
-            <img src={key} alt="" />
-          </div>
-        </div>
-
-        <div className="my-4">
-          <p ref={errRef}>{err}</p>
-          <form onSubmit={handleSubmit}>
-            <div className="d-flex flex-column mb-3">
-              <label htmlFor="Email"> Email</label>
-              <input
-                id="email"
-                type="email"
-                className="form-control d-inline"
-                ref={userRef}
-                placeholder="Email"
-                aria-label="Email"
-                aria-describedby="addon-wrapping"
-                autoComplete="off"
-                onChange={(e) => setUser(e.target.value)}
-                value={user}
-                required
-              />
+    <>
+      <div className="d-flex justify-content-between my-5 me-5 ">
+        <h1 className="text-white text-custom">
+          An <span className="text-warning">easy-to-use</span> <br /> batch
+          tracking <br /> system for your <br /> webshop orders
+        </h1>
+        <div className="card card-custom p-5">
+          <div className="d-flex justify-content-between">
+            <div>
+              <h5 className="card-title text-warning fw-bolder">
+                Exisiting user?
+              </h5>
+              <h5 className="text-purple fw-bolder">Please log in here</h5>
             </div>
-            <div className="d-flex flex-column mb-3">
-              <label htmlFor="Username"> Password</label>
-              <input
-                id="password"
-                type="password"
-                className="form-control d-inline"
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby="addon-wrapping"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                required
-              />
+            <div>
+              <img src={key} alt="" />
             </div>
-            <button className="button-custom mb-3">Tilmeld</button>
-          </form>
-          <a
-            type="button"
-            className="forgot-password"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Forgot password
-          </a>
+          </div>
 
-          <div
-            className="modal fade"
-            id="exampleModal"
-            tabIndex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Forgot Password
-                  </h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <form onSubmit={handleForgotPassword}>
-                  <div className="modal-body mx-3 mt-3">
-                    <input
-                      id="forgot-email"
-                      type="email"
-                      className="form-control d-inline"
-                      placeholder="Enter your email"
-                      aria-label="email"
-                      aria-describedby="addon-wrapping"
-                      onChange={(e) => setEmail(e.target.value)}
-                      onBlur={(e) => checkExist(e.target.value)}
-                      value={email}
-                      required
-                    />
-                  </div>
-                  <p className="text-danger p-3" ref={errRef}>
-                    {err}
-                  </p>
-                  <div className="modal-footer">
+          <div className="my-4">
+            <p ref={errRef}>{err}</p>
+            <form onSubmit={handleSubmit}>
+              <div className="d-flex flex-column mb-3">
+                <label htmlFor="Email"> Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  className="form-control d-inline"
+                  ref={userRef}
+                  placeholder="Email"
+                  aria-label="Email"
+                  aria-describedby="addon-wrapping"
+                  autoComplete="off"
+                  onChange={(e) => setUser(e.target.value)}
+                  value={user}
+                  required
+                />
+              </div>
+              <div className="d-flex flex-column mb-3">
+                <label htmlFor="Username"> Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  className="form-control d-inline"
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-describedby="addon-wrapping"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  required
+                />
+              </div>
+              <button className="button-custom mb-3">Tilmeld</button>
+            </form>
+            <a
+              type="button"
+              className="forgot-password"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Forgot password
+            </a>
+
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabIndex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Forgot Password
+                    </h5>
                     <button
-                      disabled={disable}
-                      type="submit"
-                      aria-label="Close"
+                      type="button"
+                      className="btn-close"
                       data-bs-dismiss="modal"
-                      className="btn btn-primary"
-                    >
-                      Submit
-                    </button>
+                      aria-label="Close"
+                    ></button>
                   </div>
-                </form>
+                  <form onSubmit={handleForgotPassword}>
+                    <div className="modal-body mx-3 mt-3">
+                      <input
+                        id="forgot-email"
+                        type="email"
+                        className="form-control d-inline"
+                        placeholder="Enter your email"
+                        aria-label="email"
+                        aria-describedby="addon-wrapping"
+                        onChange={(e) => setEmail(e.target.value)}
+                        onBlur={(e) => checkExist(e.target.value)}
+                        value={email}
+                        required
+                      />
+                    </div>
+                    <p className="text-danger p-3" ref={errRef}>
+                      {err}
+                    </p>
+                    <div className="modal-footer">
+                      <button
+                        disabled={disable}
+                        type="submit"
+                        aria-label="Close"
+                        data-bs-dismiss="modal"
+                        className="btn btn-primary"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
+
   );
 };
 

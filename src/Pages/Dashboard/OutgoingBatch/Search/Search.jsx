@@ -129,7 +129,7 @@ export default function Search() {
                             </button>
                           </td>
                           <td>{ship.quantity}</td>
-                          <td>{ship.shipment_date}</td>
+                          <td>{ship.order_date}</td>
                           <td>
                             {ship.quantity *
                               foundBatch?.batch_template?.total_weight}
